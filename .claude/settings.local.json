@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(/Users/brad/Development/pdf-to-md/.venv/bin/python:*)"
+      "Bash(/Users/brad/Development/pdf-to-md/.venv/bin/python:*)",
+      "Bash(/Users/brad/Development/pdf-to-md/.venv/bin/pip freeze:*)"
     ]
   }
 }
