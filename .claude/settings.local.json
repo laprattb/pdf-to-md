@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/brad/Development/pdf-to-md/.venv/bin/python:*)"
+    ]
+  }
+}

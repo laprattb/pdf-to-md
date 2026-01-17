@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Output files
+*.md
+!README.md
+
+# Extracted images
+*_images/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
