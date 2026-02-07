@@ -78,6 +78,19 @@ def process_markdown(content: str) -> str:
     # Match lines with lots of leading whitespace followed by - or *
     output = re.sub(r'^[ \t]{4,}([-*])', r'\1', output, flags=re.MULTILINE)
 
+    # Remove PDF headers/footers
+    # Document title headers (e.g., "User Management Component 2.9.2 - UMC Federation...")
+    output = re.sub(r'^.+\d+\.\d+(?:\.\d+)?\s*-\s*.+(?:Manual|Notes|Guide|Overview)\s*$', '', output, flags=re.MULTILINE)
+    # Document ID footers (e.g., "A5E50361223-AA")
+    output = re.sub(r'^A\d{1}E\d+-[A-Z]{2}\s*$', '', output, flags=re.MULTILINE)
+    # Standalone page numbers (Arabic or Roman numerals)
+    output = re.sub(r'^(?:i{1,3}|iv|vi{0,3}|ix|x{0,3}|\d{1,3})\s*$', '', output, flags=re.MULTILINE | re.IGNORECASE)
+    # Section references in headers (e.g., "_1 Overview_")
+    output = re.sub(r'^_\d+(?:\.\d+)*\s+[^_]+_\s*$', '', output, flags=re.MULTILINE)
+
+    # Clean up multiple consecutive blank lines again after removals
+    output = re.sub(r'\n{3,}', '\n\n', output)
+
     return output
 
 
