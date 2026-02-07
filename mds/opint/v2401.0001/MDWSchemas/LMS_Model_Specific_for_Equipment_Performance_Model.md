@@ -1,0 +1,1 @@
+![](mds/opint/v2401.0001/MDWSchemas/LMS_Model_Specific_for_Equipment_Performance_Model_images/LMS_Model_Specific_for_Equipment_Performance_Model.pdf-0-full.png)

@@ -110,6 +110,7 @@ def convert_pdf_to_markdown(
             kwargs["image_path"] = image_dir
         else:
             kwargs["image_path"] = str(pdf_path.parent / f"{pdf_path.stem}_images")
+        Path(kwargs["image_path"]).mkdir(parents=True, exist_ok=True)
 
     markdown_content = pymupdf4llm.to_markdown(str(pdf_path), **kwargs)
 

@@ -8,13 +8,9 @@ __pycache__/
 dist/
 build/
 
-# Output files
-*.md
-!README.md
-!claude.md
-
-# Extracted images
-*_images/
+# Output files (allow mds/ directory)
+# *_images/ directories outside mds/ are ignored
+/*_images/
 
 # IDE
 .idea/
