@@ -73,6 +73,11 @@ def process_markdown(content: str) -> str:
     # Clean up multiple consecutive blank lines (reduce to max 1)
     output = '\n'.join(result)
     output = re.sub(r'\n{3,}', '\n\n', output)
+
+    # Clean up excessively indented list items (common in PDF extraction)
+    # Match lines with lots of leading whitespace followed by - or *
+    output = re.sub(r'^[ \t]{4,}([-*])', r'\1', output, flags=re.MULTILINE)
+
     return output
 
 
